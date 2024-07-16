@@ -2,12 +2,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import EventList from "../../components/eventList";
 import { getEvents } from "../../services/eventService";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  process.env.REACT_APP_SUPABASE_URL!,
-  process.env.REACT_APP_SUPABASE_ANON_KEY!
-);
 
 jest.mock("../../services/eventService");
 
