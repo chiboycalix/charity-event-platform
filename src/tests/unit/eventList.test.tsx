@@ -1,7 +1,7 @@
 /* eslint-disable testing-library/no-wait-for-multiple-assertions */
 import { render, screen, waitFor } from "@testing-library/react";
-import EventList from "../../src/components/eventList/index";
-import { getEvents } from "../../src/services/eventService";
+import EventList from "../../components/eventList";
+import { getEvents } from "../../services/eventService";
 
 jest.mock("../../services/eventService");
 
