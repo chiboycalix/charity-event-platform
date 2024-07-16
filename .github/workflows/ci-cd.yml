@@ -19,6 +19,9 @@ jobs:
           REACT_APP_SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_URL }}
           REACT_APP_SUPABASE_ANON_KEY: ${{ secrets.REACT_APP_SUPABASE_ANON_KEY }}
       - run: |
+          if [ -n "$REACT_APP_SUPABASE_URL" ]; then echo "REACT_APP_SUPABASE_URL is set"; else echo "REACT_APP_SUPABASE_URL is not set"; fi
+          if [ -n "$REACT_APP_SUPABASE_ANON_KEY" ]; then echo "REACT_APP_SUPABASE_ANON_KEY is set"; else echo "REACT_APP_SUPABASE_ANON_KEY is not set"; fi
+      - run: |
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
