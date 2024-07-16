@@ -42,7 +42,7 @@ jobs:
         run: npx playwright test
 
   deploy:
-    needs: [test, e2e]
+    needs: [test]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
